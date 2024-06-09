@@ -20,9 +20,9 @@ This project is a console-based implementation of the classic Blackjack game. Th
 ### Project Setup
 1. Ensure you have Python installed on your system.
 2. Place the following files in the same directory:
-- main.py: The main game logic.
-- art.py: Contains the ASCII art for the game logo.
-- replit.py: Contains the clear() function to clear the console.
+    - main.py: The main game logic.
+    - art.py: Contains the ASCII art for the game logo.
+    - replit.py: Contains the clear() function to clear the console.
 
 #### Instructions
 1. Run the game using the command:

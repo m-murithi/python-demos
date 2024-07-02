@@ -1,0 +1,27 @@
+# Ignore virtual environment
+venv/
+env/
+*.venv/
+
+# Ignore pipenv
+Pipfile
+Pipfile.lock
+
+# Ignore PyInstaller files
+dist/
+build/
+*.spec
+
+# Ignore Python bytecode
+__pycache__/
+*.pyc
+
+# Ignore IDE files
+.vscode/
+.idea/
+*.pyc
+*.pyo
+*.pyd
+*.pyc
+*.pyo
+*.pyd

@@ -1,4 +1,6 @@
 import requests
+from datetime import datetime
+import os
 
 GENDER = "male"
 WEIGHT_KG = 84
@@ -27,3 +29,21 @@ parameters = {
 response = requests.post(exercise_endpoint, json=parameters, headers=headers)
 result = response.json()
 print(f"Nutritionix API call: \n {result} \n")
+
+today_date = datetime.now().strftime("%d/%m/%Y")
+now_time = datetime.now().strftime("%X")
+
+GOOGLE_SHEET_NAME = "workout"
+sheet_endpoint = os.environ[
+    "ENV_SHEETY_ENDPOINT"]
+
+for exercise in result["exercises"]:
+    sheet_inputs = {
+        GOOGLE_SHEET_NAME: {
+            "date": today_date,
+            "time": now_time,
+            "exercise": exercise["name"].title(),
+            "duration": exercise["duration_min"],
+            "calories": exercise["nf_calories"]
+        }
+    }

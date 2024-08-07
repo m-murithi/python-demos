@@ -48,6 +48,11 @@ for exercise in result["exercises"]:
         }
     }
 
-    """
-    sheet_response = requests.post(sheet_endpoint, json=sheet_inputs)
-    """
+    sheet_response = requests.post(
+        sheet_endpoint,
+        json=sheet_inputs,
+        auth=(
+            os.environ["ENV_SHEETY_USERNAME"],
+            os.environ["ENV_SHEETY_PASSWORD"],
+        )
+    )

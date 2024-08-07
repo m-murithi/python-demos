@@ -48,14 +48,13 @@ for exercise in result["exercises"]:
         }
     }
 
-    """
-    bearer_headers = {
-        "Authorization": f"Bearer {os.environ['ENV_SHEETY_TOKEN']}"
-    }
     sheet_response = requests.post(
         sheet_endpoint,
         json=sheet_inputs,
-        headers=bearer_headers
-    )    
-    """
+        auth=(
+            os.environ["ENV_SHEETY_USERNAME"],
+            os.environ["ENV_SHEETY_PASSWORD"],
+        )
+    )
+
     print(f"Sheety Response: \n {sheet_response.text}")

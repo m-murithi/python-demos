@@ -47,3 +47,7 @@ for exercise in result["exercises"]:
             "calories": exercise["nf_calories"]
         }
     }
+
+    """
+    sheet_response = requests.post(sheet_endpoint, json=sheet_inputs)
+    """
